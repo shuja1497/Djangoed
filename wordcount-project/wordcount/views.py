@@ -25,3 +25,7 @@ def count(request):
     sorted_words = sorted(worddictionary.items(), key=operator.itemgetter(1), reverse=True)
 
     return render(request, 'count.html', {'fulltext': text, 'count': len(wordlist), 'sorted_words': sorted_words})
+
+
+def about(request):
+    return HttpResponse("This is a word counter django app")
