@@ -8,3 +8,7 @@ def home(request):
 
 def barcelona(request):
     return HttpResponse("<h1>Forca Barca<h1>")
+
+
+def count(request):
+    return HttpResponse('Count')
