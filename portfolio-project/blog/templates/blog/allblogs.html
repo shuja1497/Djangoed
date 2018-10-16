@@ -38,7 +38,7 @@
                     <a class="nav-link" href="#">Github</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link active" href="#">Blog</a>
                 </li>
             </ul>
         </div>
@@ -48,35 +48,30 @@
 
 <main role="main">
 
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">Shuja Reshi</h1>
-            <p class="lead text-muted">I am an undergraduate B.Tech student who is interested in learning new and upcoming technologies. I am an android developer having a 6 months experience of working in a startup environment. Apart from android development, python is a language that makes me love development more.</p>
-            <p>
-                <a href="mailto:shujareshi1497@gmail.com" class="btn btn-primary my-2">Email Me</a>
-            </p>
-        </div>
-    </section>
+    <div class="container">
+        <h1 class="text-center pt-3" >
+            Welcome to Shuja's blog
+        </h1>
 
-    <div class="album py-5 bg-light">
-        <div class="container">
+        <br/>
+        <br/>
 
-            <div class="row">
+        <h2>Latest Posts</h2>
+        <hr/>
 
-                            {% for projects in projects.all %}
+        {% for blog in blogs.all %}
 
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top"
-                             src = "{{ projects.image.url }}">
-                        <div class="card-body">
-                            <p class="card-text">{{ projects.summary }}</p>
-                    </div>
-                </div>
-            </div>
-                            {% endfor %}
+        <a href = ""><h3>{{ blog.title }}</h3> </a>
+        {{ blog.pub_date }}
+        <br/>
+        <img class="img-fluid" src="{{ blog.image.url }}" height=200 width=200/>
+        <br/>
 
-        </div>
+        <p>{{ blog.body }}</p>
+
+        <br/>
+
+        {% endfor %}
 
     </div>
 
