@@ -1,6 +1,8 @@
 
 <!doctype html>
 <html lang="en">
+
+{% load staticfiles%}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto" >
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Resume</a>
+                    <a class="nav-link" href="{% static 'resume.pdf' %}">Resume</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">LinkedIn</a>
@@ -55,6 +57,7 @@
             <p>
                 <a href="mailto:shujareshi1497@gmail.com" class="btn btn-primary my-2">Email Me</a>
             </p>
+            <img src="{% static 'profile_image.jpg' %}" height="200" width="200"/>
         </div>
     </section>
 
