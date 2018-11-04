@@ -10,6 +10,7 @@ local_settings.py
 db.sqlite3
 /media
 portfolio-project/static
+producthunt-project/static
 djangp_practise/
 
 ### PyCharm ###
