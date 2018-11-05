@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>login</title>
+    <title>signup</title>
 </head>
 <body>
 
@@ -10,7 +10,34 @@
 
 {% block content %}
 
-LOGIN!
+
+{% if error %}
+
+{{ error }}
+<br/>
+<br/>
+
+{% endif %}
+<h1>Login</h1>
+<br/>
+<br/>
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    Username:
+    <br/>
+    <input type="text" name="username" />
+    <br/>
+
+    Password:
+    <br/>
+    <input type="password" name="password" />
+    <br/>
+    <br/>
+
+    <input class="button button-primary" type="submit" value="Login">
+
+</form>
+
 
 {% endblock %}
 
