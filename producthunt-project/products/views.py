@@ -10,7 +10,7 @@ def home(request):
     return render(request, 'products/home.html', {'products': products})
 
 
-@login_required
+@login_required(login_url='/accounts/signup')
 def create(request):
     if request.method == 'POST':
         if request.POST['title'] and request.POST['url'] and request.FILES['image'] and request.FILES['icon'] \
@@ -43,7 +43,7 @@ def detail(request, product_id):
     return render(request, 'products/detail.html', {'product': product})
 
 
-@login_required
+@login_required(login_url='/accounts/signup')
 def upvote(request, product_id):
     if request.method == 'POST':
         product = get_object_or_404(Product, pk=product_id)
